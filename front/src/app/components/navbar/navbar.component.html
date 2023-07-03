@@ -1,0 +1,99 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="brand_container is-inline-block">
+        <a routerLink="/">
+            <img src="../../../assets/images/logo_horizontal.png" width="155">
+        </a>
+    </div>
+    <div class="searchbar_container desktop">
+        <div class="control has-icons-right searchbar is-inline-block">
+            <input class="input is-rounded " type="text" placeholder="Search">
+            <span class="icon is-small is-right">
+                <i class="ri-search-line"></i>
+            </span>
+        </div>
+    </div>
+    <div class="options_container is-inline-block" >
+        <div class="profilediv is-inline-block" (click)="options.visible = !options.visible">
+            <div class="profile_button">
+                <i class="ri-arrow-down-s-line" *ngIf="!options.visible"></i>
+                <i class="ri-arrow-up-s-line" *ngIf="options.visible"></i>
+            </div>
+        </div>
+        <div class="options panel is-primary" *ngIf="options.visible && options.view.name === 'login'">
+            <div class="panel-block options_searchbar">
+                <p class="control has-icons-right">
+                    <input class="input is-rounded is-small" type="text" placeholder="Search">
+                    <span class="icon is-small is-right">
+                        <i class="ri-search-line"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="panel-heading">
+                Login / <a style="font-size: 75%;" (click)="options.view.name = 'signup'">Signup</a>
+            </div>
+            <div style="padding: 10px;">
+                <div style="font-size: 50px;">
+                    <i class="ri-account-circle-line"></i>
+                </div>
+                <input class="input is-rounded is-small" [(ngModel)]="options.view.username" placeholder="Username">
+                <input class="input is-rounded is-small" [(ngModel)]="options.view.password" placeholder="Password">
+            </div>
+            <div class="panel-footer">
+                <button class="button is-dark is-fullwidth" (click)="loggin()">
+                    Loggin&nbsp;<i class="ri-login-circle-line"></i>
+                </button>
+            </div>
+        </div>
+        <div class="options panel is-primary" *ngIf="options.visible && options.view.name === 'signup'">
+            <div class="panel-block options_searchbar">
+                <p class="control has-icons-right">
+                    <input class="input is-rounded is-small" type="text" placeholder="Search">
+                    <span class="icon is-small is-right">
+                        <i class="ri-search-line"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="panel-heading">
+                <a style="font-size: 75%;" (click)="options.view.name = 'login'">Login</a> / Signup
+            </div>
+            <div style="padding: 10px;">
+                <div style="font-size: 50px;">
+                    <i class="ri-account-circle-line"></i>
+                </div>
+                <input class="input is-rounded is-small" [(ngModel)]="options.view.email" placeholder="Email">
+                <input class="input is-rounded is-small" [(ngModel)]="options.view.username" placeholder="Username">
+                <input class="input is-rounded is-small" [(ngModel)]="options.view.password" placeholder="Password">
+            </div>
+            <div class="panel-footer">
+                <button class="button is-dark is-fullwidth" (click)="signup()">
+                    Signup&nbsp;<i class="ri-user-add-line"></i>
+                </button>
+            </div>
+        </div>
+        <div class="options panel is-primary" *ngIf="options.visible && options.view.name === 'options'">
+            <div class="panel-block options_searchbar">
+                <p class="control has-icons-right">
+                    <input class="input is-rounded is-small" type="text" placeholder="Search">
+                    <span class="icon is-small is-right">
+                        <i class="ri-search-line"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="panel-heading">
+                {{authService.username}}
+            </div>
+            <a class="panel-block is-active" (click)="options.visible = false">
+                <span class="panel-icon">
+                    <i class="ri-settings-4-line" aria-hidden="true"></i>
+                </span>
+                Config
+            </a>
+            <a routerLink="/posts/new" class="panel-block is-active" (click)="options.visible = false">
+                <span class="panel-icon">
+                    <i class="ri-add-box-line" aria-hidden="true"></i>
+                </span>
+                New post
+            </a>
+        </div>
+    </div>
+</nav>

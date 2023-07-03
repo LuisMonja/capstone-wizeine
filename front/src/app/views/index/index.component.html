@@ -1,0 +1,13 @@
+<section class="main">
+    <div class="posts-container">
+        <div *ngFor="let column of postsByLine" class="cl">
+            <a *ngFor="let post of column" (click)="goToPost(post._id)">
+                <div class="panel" [style.height]="post.height + 'px'"
+                    [style.background-image]="'url(' + post.background + ')'">
+                    <p><strong>{{post.title}}</strong><br />
+                    {{post.body}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

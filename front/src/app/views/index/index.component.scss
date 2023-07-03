@@ -1,0 +1,46 @@
+.main {
+    margin: auto;
+    max-width: 1024px;
+    margin-top: 100px;
+    
+}
+.posts-container{
+    display: inline-flex;
+    align-content: center;
+    text-align: center;
+}
+
+.cl{
+    width: 220px;
+    margin: 5px;
+    align-content: center;
+}
+
+a{
+    margin: auto;
+    width: 100%;
+    padding: 5px;
+    float: inline-start;
+    overflow: hidden;
+    background-position: center;
+    align-content: center;
+    text-align: center;
+}
+a .panel{
+    width: 100%;
+    padding: 5px;
+    float: inline-start;
+    overflow: hidden;
+    background-position: center;
+    color: black;
+    position: relative;
+    p{
+        background-color: black;
+        color: white !important;
+        border-radius: 5px;
+        padding: 5px;
+        width: 210px;
+        position: absolute;
+        bottom: 5px;
+    }
+}

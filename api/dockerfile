@@ -1,0 +1,5 @@
+FROM node
+WORKDIR /api
+COPY . /api/
+RUN npm i --omit=dev
+CMD [ "npm", "run", "start" ]

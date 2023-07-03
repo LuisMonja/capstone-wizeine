@@ -1,0 +1,16 @@
+<section class="main">
+    Published by <a>{{username}}</a>
+    <h4 class="title is-3">{{title}}</h4>
+    <P class="subtitle is-5">{{body}}
+    <P>
+    <div class="image-container">
+        <div *ngFor="let img of images" [style.background-image]="'url(' + img + ')'"></div>
+    </div>
+    <!--
+    
+    <label for="images" class="button is-dark"><i class="ri-image-line"></i> &nbsp;Add Images</label>
+    <br><br>
+    <button class="button is-success"><i class="ri-article-line"></i> &nbsp;Publicar</button>
+
+    <input type="file" id="images" name="images" hidden (change)="uploaded($event.target)">-->
+</section>

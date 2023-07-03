@@ -1,0 +1,95 @@
+.options {
+    position: absolute;
+    right: 5px;
+    z-index: 100;
+    top: 55px;
+    width: 300px;
+    text-align: center;
+    align-content: center;
+}
+
+.options input {
+    margin-bottom: 5px;
+}
+
+nav {
+    border-bottom: 1px solid lightgray;
+}
+
+.brand_container {
+    text-align: center;
+    align-content: center;
+    margin-left: 5px;
+    width: 10%;
+}
+
+.searchbar_container {
+    align-content: center;
+    text-align: center;
+    width: 79%;
+}
+
+.searchbar {
+    margin-top: 7px;
+    width: 40%;
+}
+
+.options_container {
+    width: 9%;
+    text-align: right;
+    align-content: right;
+}
+
+.profilediv {
+    margin-top: 2px;
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    background-image: url('../../../assets/images/unset_profile_picture.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.profile_button {
+    margin-top: 2px;
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: black;
+    opacity: 0;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+.profile_button:hover {
+    opacity: 0.75;
+}
+
+.options_searchbar {
+    display: none;
+}
+
+.options {
+    background-color: white;
+}
+
+@media (max-width: 1024px) {
+    .searchbar_container {
+        display: none;
+    }
+
+    .options_container {
+        text-align: right;
+        align-content: right;
+    }
+
+    .options_searchbar {
+        display: block;
+    }
+
+    .brand_container {
+        width: 88%;
+    }
+}

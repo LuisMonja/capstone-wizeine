@@ -1,0 +1,16 @@
+<section class="main" *ngIf="authService.token">
+    <input class="input title is-4" placeholder="Title" [(ngModel)]="title" /><br />
+    <textarea class="input subtitle is-5" placeholder="Content..." style="height: 300px;" [(ngModel)]="body"></textarea>
+    <div class="image-container">
+        <div *ngFor="let img of images" [style.background-image]="'url(' + img + ')'"></div>
+    </div>
+    <label for="images" class="button is-dark"><i class="ri-image-line"></i> &nbsp;Add Images</label>
+    <br><br>
+    <button class="button is-success" (click)="publish()" ><i class="ri-article-line"></i> &nbsp;Publicar</button>
+
+    <input type="file" id="images" name="images" hidden (change)="uploaded($event.target)">
+</section>
+
+<section class="main" *ngIf="!authService.token">
+    <h3 class="title is-3">You need to loggin in order to publish a post</h3>
+</section>
